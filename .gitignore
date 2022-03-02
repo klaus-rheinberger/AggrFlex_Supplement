@@ -130,5 +130,6 @@ dmypy.json
 
 # KR:
 
+.directory
 data/
 results/processed_data/
