@@ -149,24 +149,37 @@ def dsp_default():
     dsp = {}
     
     dsp['algos compare']  = ['exact', 'no flexibility']
-    # dsp['algos evaluate'] = ['Barot wo. pc.', 'Barot w. pc.']  # not yet needed
-    dsp['algo type']      = {'Barot wo. pc.':'outer', 
-                             'Barot w. pc.' :'outer',
-                             'Homothet Stage 0':'inner',
-                             'Outer Battery Homothet':'outer',
-                             'Inner Battery Homothet':'inner',
-                             'Homothet Projection':'inner',
-                             'Union of Homothets Stage 1':'inner',
-                             'Zonotopes':'inner',
-                             'Zonotopes l1':'inner',
-                             'Zonotopes l2':'inner',
-                             'Zhen Ellipsoid Inner':'inner',
-                             'Barot Ellipsoid Inner':'inner',
-                             'Simple Inner':'inner',
-                             'Klaus inner span':'inner'}
-    dsp['type algos'] = {'inner':['Homothet Stage 0','Inner Battery Homothet', 'Homothet Projection', 'Union of Homothets Stage 1',
-                                  'Zonotopes', 'Zonotopes l1', 'Zonotopes l2', 'Zhen Ellipsoid Inner', 'Barot Ellipsoid Inner'],
-                         'outer':['Barot wo. pc.', 'Barot w. pc.', 'Outer Battery Homothet']}
+    dsp['algo type']      = {'OA by RHS Summation':'outer', 
+                             'OA by RHS Summation with PC' :'outer',
+                             'IA with Cuboid Homothets Stage 0':'inner',
+                             'OA with Battery Homothets':'outer',
+                             'IA with Battery Homothets':'inner',
+                             'IA by Battery Homothet Projection with LDR':'inner',
+                             'IA with Cuboid Homothets Stage 1':'inner',
+                             'IA with Zonotopes $l_\infty$':'inner',
+                             'IA with Zonotopes $l_1$':'inner',
+                             'IA with Zonotopes $l_2$':'inner',
+                             "IA with Zonotopes weighted":'inner',
+                             'IA by Ellipsoid Projection with LDR':'inner',
+                             'IA by Ellipsoid Projection':'inner'
+                             }
+    dsp['type algos'] = {'inner':[
+                                  'IA with Cuboid Homothets Stage 0',
+                                  'IA with Battery Homothets',
+                                  'IA by Battery Homothet Projection with LDR',
+                                  'IA with Cuboid Homothets Stage 1',
+                                  'IA with Zonotopes $l_\infty$',
+                                  'IA with Zonotopes $l_1$',
+                                  'IA with Zonotopes $l_2$',
+                                  'IA with Zonotopes weighted',
+                                  'IA by Ellipsoid Projection with LDR',
+                                  'IA by Ellipsoid Projection'
+                                 ],
+                         'outer':['OA by RHS Summation', 
+                                  'OA by RHS Summation with PC', 
+                                  'OA with Battery Homothets'
+                                 ]
+                        }
     dsp['quantity type']  = {'cost_value':'objective', 
                              'peak_value':'objective',
                              'algo_time' :'duration', 
