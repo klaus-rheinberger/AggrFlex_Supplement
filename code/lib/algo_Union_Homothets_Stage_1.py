@@ -180,9 +180,9 @@ def MaxVolHypercubeHomothet(A,b,r_list): # calculates max valume homothets of pr
     xp = cp.Variable(n,name=("xp"))
     xm = cp.Variable(n,name=("xm"))
     
-    contraitns = []
+    constraints = []
     for i in range(len(r_list)):
-        constraints = contraitns + [xp[0]-xm[0] == r_list[i]*(xp[i+1]-xm[i+1])]
+        constraints = constraints + [xp[0]-xm[0] == r_list[i]*(xp[i+1]-xm[i+1])]
     constraints = constraints + [Ap@xp-Am@xm<=b,
                                  xm <= xp-epsilon] #enforce strict inequality
 
